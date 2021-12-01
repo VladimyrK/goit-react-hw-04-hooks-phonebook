@@ -40,9 +40,11 @@ function App() {
       <Filter value={filter} onFilter={e => setFilter(e.currentTarget.value)} />
       <ContactList
         items={filteredContacts}
-        onDeleteContact={id =>
-          setContacts(contacts => contacts.filter(contact => contact.id !== id))
-        }
+        onDeleteContact={id => {
+          setContacts(contacts =>
+            contacts.filter(contact => contact.id !== id),
+          );
+        }}
       />
     </div>
   );

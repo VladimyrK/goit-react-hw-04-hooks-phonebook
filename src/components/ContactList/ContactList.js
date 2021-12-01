@@ -19,8 +19,8 @@ const ContactList = ({ items, onDeleteContact }) => {
   );
 };
 
-ContactList.protTypes = {
-  items: PropTypes.objectOf(PropTypes.string),
+ContactList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
   onDeleteContact: PropTypes.func,
 };
 

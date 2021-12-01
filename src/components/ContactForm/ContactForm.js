@@ -8,7 +8,7 @@ import './ContactForm.module.css';
 function ContactForm({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const [id, setId] = useState('');
+  const [id, setId] = useState(() => nanoid());
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -21,6 +21,7 @@ function ContactForm({ onSubmit }) {
   const reset = () => {
     setName('');
     setNumber('');
+    setId(nanoid());
   };
 
   return (
@@ -54,7 +55,7 @@ function ContactForm({ onSubmit }) {
   );
 }
 
-ContactForm.protTypes = {
+ContactForm.propTypes = {
   onSubmit: PropTypes.func,
 };
 
